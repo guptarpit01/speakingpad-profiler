@@ -10,7 +10,7 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, rgba(243,244,246,0.95), rgba(226,232,240,0.95)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center;
+      background-image: linear-gradient(to bottom right, #f3f4f6, #e2e8f0);
       margin: 0;
       padding: 0;
       display: flex;
@@ -20,45 +20,45 @@
     }
     .container {
       background: white;
-      padding: 50px 40px;
+      padding: 40px 30px;
       border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-      max-width: 840px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      max-width: 820px;
       width: 95%;
       animation: fadeIn 0.7s ease-in-out;
     }
     h2 {
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       color: #1f2937;
-      font-size: 34px;
+      font-size: 32px;
     }
     .intro {
       text-align: center;
       color: #4b5563;
-      font-size: 17px;
-      margin-bottom: 32px;
+      font-size: 16px;
+      margin-bottom: 28px;
     }
     .question {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     label {
       font-weight: 600;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #2d3748;
     }
     select, input[type="range"], input[type="text"] {
       width: 100%;
-      padding: 14px;
-      font-size: 16px;
+      padding: 12px;
+      font-size: 15px;
       border: 1px solid #cbd5e0;
       border-radius: 10px;
       background-color: #f9fafb;
       transition: border-color 0.3s ease;
     }
     select:focus, input:focus {
-      border-color: #4f46e5;
+      border-color: #667eea;
       outline: none;
     }
     .range-output {
@@ -69,12 +69,12 @@
     }
     button {
       width: 100%;
-      padding: 18px;
+      padding: 16px;
       background: linear-gradient(90deg, #4f46e5, #667eea);
       color: white;
       border: none;
       border-radius: 12px;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.3s ease;
@@ -91,15 +91,12 @@
 <body>
   <div class="container">
     <h2>🤖 AI-Powered Speaking Style Profiler</h2>
-    <p class="intro">
-      This smart form by <strong>SpeakingPad</strong> helps you identify your core communication strengths and growth areas. 
-      Answer these 6 questions and get a custom roadmap designed to enhance your public speaking and interpersonal influence.
-    </p>
+    <p class="intro">Built by SpeakingPad, this smart form decodes your speaking personality using behavioral themes from public speaking and communication. Complete the 6-question profiler to get a custom roadmap to upgrade your confidence, presence, and persuasion power.</p>
 
     <form id="quizForm">
       <div class="question">
         <label>1. How do you rate your ability to structure and deliver a speech?</label>
-        <select id="speech" required>
+        <select id="speech">
           <option value="" disabled selected>Select your answer</option>
           <option value="struggle">I struggle with both structuring and delivery</option>
           <option value="content">I can structure content but delivery is poor</option>
@@ -109,7 +106,7 @@
       </div>
       <div class="question">
         <label>2. When presenting in front of a group, how do you feel?</label>
-        <select id="presentation" required>
+        <select id="presentation">
           <option value="" disabled selected>Select your answer</option>
           <option value="avoid">I try to avoid such situations completely</option>
           <option value="hesitant">I manage to speak but feel anxious throughout</option>
@@ -119,7 +116,7 @@
       </div>
       <div class="question">
         <label>3. How do you respond to spontaneous or impromptu speaking tasks?</label>
-        <select id="impromptu" required>
+        <select id="impromptu">
           <option value="" disabled selected>Select your answer</option>
           <option value="freeze">I freeze or go blank</option>
           <option value="fumble">I respond but struggle to stay coherent</option>
@@ -129,7 +126,7 @@
       </div>
       <div class="question">
         <label>4. How would you describe your tone and voice modulation?</label>
-        <select id="tone" required>
+        <select id="tone">
           <option value="" disabled selected>Select your answer</option>
           <option value="flat">Flat, monotonous and too fast/slow</option>
           <option value="awkward">Some variety but awkward transitions</option>
@@ -144,7 +141,7 @@
       </div>
       <div class="question">
         <label>6. Which communication skill do you wish to improve most?</label>
-        <select id="challenge" required>
+        <select id="challenge">
           <option value="" disabled selected>Select your answer</option>
           <option value="interview">Cracking interviews with powerful answers</option>
           <option value="group">Standing out in group discussions</option>
@@ -155,7 +152,6 @@
       <button type="button" onclick="evaluateProfile()">🚀 Generate My AI Communication Plan</button>
     </form>
   </div>
-
   <script>
     function evaluateProfile() {
       const speech = document.getElementById('speech').value;
@@ -166,7 +162,7 @@
       const challenge = document.getElementById('challenge').value;
 
       if (!speech || !presentation || !impromptu || !tone || !challenge) {
-        alert("Please select an answer for all questions.");
+        alert("Please select an answer for all dropdowns.");
         return;
       }
 
@@ -181,7 +177,7 @@
       if (challenge === 'group') modules.add('🤝 Group Discussion Skills');
       if (challenge === 'presentation') modules.add('🎯 Presentation Skills');
 
-      const resultText = `Here’s your personalized SpeakingPad roadmap based on your profile:\n\n${Array.from(modules).map(m => `✔️ ${m}`).join('\n')}\n\nLet’s get started!`;
+      const resultText = `Here’s your personalized SpeakingPad roadmap based on your profile:\n\n${Array.from(modules).map(m => `✔️ ${m}`).join('\n')}`;
       localStorage.setItem("roadmap", resultText);
       window.location.href = "lead.html";
     }
