@@ -108,7 +108,12 @@
         })
       });
 
-      document.getElementById('finalRoadmap').innerHTML = `<strong>📍 Your SpeakingPad Roadmap:</strong><p>${roadmap.replace(/\n/g, '<br>')}</p>`;
+      document.getElementById('finalRoadmap').innerHTML = `
+      <h3>🚀 Your Personalized Communication Growth Plan</h3>
+      <p>${roadmap.replace(/\n/g, '<br>')}</p>
+      <p style="margin-top:20px;"><strong>🎯 Action Step:</strong><br>
+      Take the first step today! Pick any one skill above and commit to improving it this week.<br>
+      Need help? <a href="https://speakingpad.in/start" target="_blank">Start with us here</a>.</p>`;
       document.getElementById('finalRoadmap').style.display = 'block';
     }
   </script>
