@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI-Powered Speaking Profiler | SpeakingPad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -80,7 +80,7 @@
     button:hover {
       background: linear-gradient(90deg, #4338ca, #5a67d8);
     }
-    .result, .lead-capture, .final-roadmap {
+    .lead-capture, .final-roadmap {
       margin-top: 32px;
       padding: 24px;
       border-radius: 12px;
@@ -176,12 +176,12 @@
       <h3>📬 Where should we send your SpeakingPad roadmap?</h3>
       <label>Name:</label>
       <input type="text" id="userName" placeholder="Enter your name">
-      <label>Phone Number (WhatsApp):</label>
+      <label>Phone Number:</label>
       <input type="text" id="userPhone" placeholder="10-digit mobile number">
       <label>Location:</label>
       <input type="text" id="userLocation" placeholder="Your city or region">
       <br><br>
-      <button onclick="sendWhatsAppMessage()">📲 Send My Plan on WhatsApp</button>
+      <button onclick="submitLeadAndShowRoadmap()">🔓 Show My Roadmap</button>
     </div>
 
     <div id="finalRoadmap" class="final-roadmap"></div>
@@ -220,7 +220,7 @@
       document.getElementById('leadForm').style.display = 'block';
     }
 
-    function sendWhatsAppMessage() {
+    function submitLeadAndShowRoadmap() {
       const name = document.getElementById('userName').value.trim();
       const phone = document.getElementById('userPhone').value.trim();
       const location = document.getElementById('userLocation').value.trim();
@@ -230,27 +230,25 @@
         return;
       }
 
-      const fullMessage = `Hi ${name}! 👋\n\nThanks for using SpeakingPad.\n\n${resultText}\n\nLocation: ${location}`;
-      const encodedMessage = encodeURIComponent(fullMessage);
-      const waUrl = `https://wa.me/91${phone}?text=${encodedMessage}`;
-
-      // Save to Google Sheet
-      fetch('https://script.google.com/macros/s/AKfycby8IXiBK47hyjMWsMGbhMm-9geynaUXRZZnUF7lKAY/dev', {
+      fetch('https://script.google.com/macros/s/AKfycbzCPs73BK94JbMbqazZ5Se5XS-E100qmru-4epnusOc8__ZRVCihW_ds2coHcnXSR3-/exec', {
         method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
           name: name,
           phone: phone,
           location: location,
           modules: resultText.replace(/✔️/g, '').replace(/\n/g, ', ')
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        })
+      }).catch((error) => {
+        console.warn("Could not submit to Google Sheets:", error);
       });
 
       document.getElementById('finalRoadmap').innerHTML = `<strong>📍 Your SpeakingPad Roadmap:</strong><p>${resultText.replace(/\n/g, '<br>')}</p>`;
       document.getElementById('finalRoadmap').style.display = 'block';
-      window.open(waUrl, '_blank');
+      document.getElementById('leadForm').style.display = 'none';
     }
   </script>
 </body>
