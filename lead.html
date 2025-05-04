@@ -1,0 +1,116 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lead Capture | SpeakingPad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(to bottom right, #f3f4f6, #e2e8f0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      max-width: 820px;
+      width: 95%;
+    }
+    h3 {
+      text-align: center;
+      color: #1a202c;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      font-size: 15px;
+      border: 1px solid #cbd5e0;
+      border-radius: 10px;
+      background-color: #f9fafb;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(90deg, #4f46e5, #667eea);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .final-roadmap {
+      margin-top: 32px;
+      padding: 24px;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #f0fff4;
+      border-left: 6px solid #38a169;
+      color: #2f855a;
+      line-height: 1.6;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>📬 Enter Your Details to View Your Roadmap</h3>
+    <label>Name:</label>
+    <input type="text" id="userName" placeholder="Enter your name" />
+    <label>Phone Number:</label>
+    <input type="text" id="userPhone" placeholder="10-digit mobile number" />
+    <label>Location:</label>
+    <input type="text" id="userLocation" placeholder="Your city or region" />
+    <button onclick="submitLead()">🔓 Show My Roadmap</button>
+    <div id="finalRoadmap" class="final-roadmap"></div>
+  </div>
+
+  <script>
+    function submitLead() {
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const location = document.getElementById('userLocation').value.trim();
+      const roadmap = localStorage.getItem("roadmap");
+
+      if (!name || !phone || !location) {
+        alert("Please fill in all details.");
+        return;
+      }
+
+      fetch('https://script.google.com/macros/s/AKfycbzCPs73BK94JbMbqazZ5Se5XS-E100qmru-4epnusOc8__ZRVCihW_ds2coHcnXSR3-/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          phone: phone,
+          location: location,
+          modules: roadmap.replace(/✔️/g, '').replace(/\n/g, ', ')
+        })
+      });
+
+      document.getElementById('finalRoadmap').innerHTML = `<strong>📍 Your SpeakingPad Roadmap:</strong><p>${roadmap.replace(/\n/g, '<br>')}</p>`;
+      document.getElementById('finalRoadmap').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
