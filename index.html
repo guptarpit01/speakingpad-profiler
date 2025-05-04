@@ -86,7 +86,7 @@
       border-radius: 12px;
       font-size: 16px;
     }
-    .result, .final-roadmap {
+    .final-roadmap {
       background: #f0fff4;
       border-left: 6px solid #38a169;
       color: #2f855a;
@@ -172,8 +172,6 @@
       <button type="button" onclick="evaluateProfile()">🚀 Generate My AI Communication Plan</button>
     </form>
 
-    <div id="result" class="result"></div>
-
     <div id="leadForm" class="lead-capture">
       <h3>📬 Where should we send your SpeakingPad roadmap?</h3>
       <label>Name:</label>
@@ -252,7 +250,6 @@
 
       document.getElementById('finalRoadmap').innerHTML = `<strong>📍 Your SpeakingPad Roadmap:</strong><p>${resultText.replace(/\n/g, '<br>')}</p>`;
       document.getElementById('finalRoadmap').style.display = 'block';
-      document.getElementById('result').style.display = 'none';
       window.open(waUrl, '_blank');
     }
   </script>
