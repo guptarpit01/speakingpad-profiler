@@ -108,13 +108,14 @@
         })
       });
 
-      document.getElementById('finalRoadmap').innerHTML = `
-      <h3>🚀 Your Personalized Communication Growth Plan</h3>
-      <p>${roadmap.replace(/\n/g, '<br>')}</p>
-      <p style="margin-top:20px;"><strong>🎯 Action Step:</strong><br>
-      Take the first step today! Pick any one skill above and commit to improving it this week.<br>
-      Need help? <a href="https://speakingpad.in/start" target="_blank">Start with us here</a>.</p>`;
-      document.getElementById('finalRoadmap').style.display = 'block';
+     document.getElementById('finalRoadmap').innerHTML = `
+  <h3>🚀 Your Personalized Communication Growth Plan</h3>
+  <p>${roadmap.replace(/\n/g, '<br>')}</p>
+  <div style="margin-top:20px; padding:14px; background:#fefcbf; border-left:4px solid #d69e2e; border-radius:8px; color:#744210;">
+    📞 You will receive a call from our trainer in the next 1–2 days to understand your goals and suggest the best path forward.
+  </div>`;
+document.getElementById('finalRoadmap').style.display = 'block';
+
     }
   </script>
 </body>
