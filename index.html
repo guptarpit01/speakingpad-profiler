@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;AI-Powered Speaking Profiler | SpeakingPad&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-image: linear-gradient(to bottom right, #f3f4f6, #e2e8f0);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 40px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 820px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 95%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: fadeIn 0.7s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.intro {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #4b5563;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.question {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #2d3748;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>select, input[type="range"], input[type="text"] {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #cbd5e0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-color: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: border-color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>select:focus, input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: #667eea;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.range-output {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #4a5568;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, #4f46e5, #667eea);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 17px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, #4338ca, #5a67d8);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result, .lead-capture {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f0fff4;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-left: 6px solid #38a169;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #2f855a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.lead-capture {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #edf2f7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-left: 6px solid #3182ce;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ul {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 0 0 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes fadeIn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>from { opacity: 0; transform: translateY(20px); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;🤖 AI-Powered Speaking Style Profiler&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="intro"&gt;Built by SpeakingPad, this smart form decodes your speaking personality using behavioral themes from public speaking and communication. Complete the 6-question profiler to get a custom roadmap to upgrade your confidence, presence, and persuasion power.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;form id="quizForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;1. How do you rate your ability to structure and deliver a speech?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="speech"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="" disabled selected&gt;Select your answer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="struggle"&gt;I struggle with both structuring and delivery&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="content"&gt;I can structure content but delivery is poor&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="delivery"&gt;I can deliver confidently but content lacks structure&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="both"&gt;I am confident with both structure and delivery&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;2. When presenting in front of a group, how do you feel?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="presentation"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="" disabled selected&gt;Select your answer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="avoid"&gt;I try to avoid such situations completely&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="hesitant"&gt;I manage to speak but feel anxious throughout&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="comfortable"&gt;I’m mostly comfortable and occasionally get nervous&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="confident"&gt;I enjoy presenting and feel in control&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;3. How do you respond to spontaneous or impromptu speaking tasks?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="impromptu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="" disabled selected&gt;Select your answer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="freeze"&gt;I freeze or go blank&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="fumble"&gt;I respond but struggle to stay coherent&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="basic"&gt;I can handle it with basic clarity&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="confident"&gt;I respond with clarity and structure&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;4. How would you describe your tone and voice modulation?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="tone"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="" disabled selected&gt;Select your answer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="flat"&gt;Flat, monotonous and too fast/slow&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="awkward"&gt;Some variety but awkward transitions&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="decent"&gt;Decent modulation with room to improve&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="dynamic"&gt;Dynamic and audience-friendly&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;5. Rate your confidence while speaking in public (1 = Low, 10 = Rockstar)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="range" id="confidence" min="1" max="10" value="5" oninput="document.getElementById('confVal').innerText = this.value"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="range-output"&gt;Your score: &lt;span id="confVal"&gt;5&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;6. Which communication skill do you wish to improve most?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="challenge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="" disabled selected&gt;Select your answer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="interview"&gt;Cracking interviews with powerful answers&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="group"&gt;Standing out in group discussions&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="presentation"&gt;Making presentations that hold attention&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value="qa"&gt;Handling tough Q&amp;A or objections on the spot&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button type="button" onclick="evaluateProfile()"&gt;🚀 Generate My AI Communication Plan&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="result" class="result" style="display:none;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="leadForm" class="lead-capture"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3&gt;📬 Where should we send your SpeakingPad roadmap?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label&gt;Name:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="userName" placeholder="Enter your name"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label&gt;Phone Number (WhatsApp):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="userPhone" placeholder="10-digit mobile number"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label&gt;Location:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="userLocation" placeholder="Your city or region"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="sendWhatsAppMessage()"&gt;📲 Send My Plan on WhatsApp&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let resultText = "";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function evaluateProfile() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const speech = document.getElementById('speech').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const presentation = document.getElementById('presentation').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const impromptu = document.getElementById('impromptu').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tone = document.getElementById('tone').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const confidence = parseInt(document.getElementById('confidence').value);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const challenge = document.getElementById('challenge').value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!speech || !presentation || !impromptu || !tone || !challenge) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Please select an answer for all dropdowns.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>let modules = new Set();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (speech !== 'both') modules.add('🗣️ Speech Writing &amp; Delivery');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (presentation !== 'confident') modules.add('🎯 Presentation Skills');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (presentation === 'avoid' || presentation === 'hesitant') modules.add('💪 Confidence &amp; Anxiety Management');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (impromptu !== 'confident') modules.add('🧠 Impromptu Speaking');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (tone !== 'dynamic') modules.add('🎤 Voice Modulation &amp; Body Language');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (confidence &lt; 6) modules.add('💪 Confidence &amp; Anxiety Management');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (challenge === 'interview') modules.add('📋 Interview Skills');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (challenge === 'group') modules.add('🤝 Group Discussion Skills');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (challenge === 'presentation') modules.add('🎯 Presentation Skills');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>resultText = `Hi! Based on your answers, your custom SpeakingPad roadmap includes:\n\n${Array.from(modules).map(m =&gt; `✔️ ${m}`).join('\n')}\n\nLet’s get started!`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result').innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;strong&gt;🔍 Your AI Communication Profile:&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;${resultText.replace(/\n/g, '&lt;br&gt;')}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="margin-top:15px"&gt;📬 Want this sent to your WhatsApp? Fill below 👇&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('leadForm').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function sendWhatsAppMessage() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const name = document.getElementById('userName').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const phone = document.getElementById('userPhone').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const location = document.getElementById('userLocation').value.trim();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!name || !phone || !location) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Please fill in all details.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const fullMessage = `Hi ${name}! 👋\n\nThanks for using SpeakingPad. Here’s your personalized roadmap based on your profiler:\n\n${resultText}\n\nLocation: ${location}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const encodedMessage = encodeURIComponent(fullMessage);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const waUrl = `https://wa.me/91${phone}?text=${encodedMessage}`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.open(waUrl, '_blank');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
