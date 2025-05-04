@@ -80,17 +80,18 @@
     button:hover {
       background: linear-gradient(90deg, #4338ca, #5a67d8);
     }
-    .result, .lead-capture {
+    .result, .lead-capture, .final-roadmap {
       margin-top: 32px;
       padding: 24px;
       border-radius: 12px;
       font-size: 16px;
     }
-    .result {
+    .result, .final-roadmap {
       background: #f0fff4;
       border-left: 6px solid #38a169;
       color: #2f855a;
       line-height: 1.6;
+      display: none;
     }
     .lead-capture {
       background: #edf2f7;
@@ -171,7 +172,7 @@
       <button type="button" onclick="evaluateProfile()">🚀 Generate My AI Communication Plan</button>
     </form>
 
-    <div id="result" class="result" style="display:none;"></div>
+    <div id="result" class="result"></div>
 
     <div id="leadForm" class="lead-capture">
       <h3>📬 Where should we send your SpeakingPad roadmap?</h3>
@@ -184,6 +185,8 @@
       <br><br>
       <button onclick="sendWhatsAppMessage()">📲 Send My Plan on WhatsApp</button>
     </div>
+
+    <div id="finalRoadmap" class="final-roadmap"></div>
   </div>
 
   <script>
@@ -214,13 +217,8 @@
       if (challenge === 'group') modules.add('🤝 Group Discussion Skills');
       if (challenge === 'presentation') modules.add('🎯 Presentation Skills');
 
-      resultText = `Hi! Based on your answers, your custom SpeakingPad roadmap includes:\n\n${Array.from(modules).map(m => `✔️ ${m}`).join('\n')}\n\nLet’s get started!`;
+      resultText = `Here’s your personalized SpeakingPad roadmap based on your profile:\n\n${Array.from(modules).map(m => `✔️ ${m}`).join('\n')}\n\nLet’s get started!`;
 
-      document.getElementById('result').innerHTML = `
-        <strong>🔍 Your AI Communication Profile:</strong>
-        <p>${resultText.replace(/\n/g, '<br>')}</p>
-        <p style="margin-top:15px">📬 Want this sent to your WhatsApp? Fill below 👇</p>`;
-      document.getElementById('result').style.display = 'block';
       document.getElementById('leadForm').style.display = 'block';
     }
 
@@ -234,7 +232,7 @@
         return;
       }
 
-      const fullMessage = `Hi ${name}! 👋\n\nThanks for using SpeakingPad. Here’s your personalized roadmap based on your profiler:\n\n${resultText}\n\nLocation: ${location}`;
+      const fullMessage = `Hi ${name}! 👋\n\nThanks for using SpeakingPad.\n\n${resultText}\n\nLocation: ${location}`;
       const encodedMessage = encodeURIComponent(fullMessage);
       const waUrl = `https://wa.me/91${phone}?text=${encodedMessage}`;
 
@@ -252,6 +250,9 @@
         }
       });
 
+      document.getElementById('finalRoadmap').innerHTML = `<strong>📍 Your SpeakingPad Roadmap:</strong><p>${resultText.replace(/\n/g, '<br>')}</p>`;
+      document.getElementById('finalRoadmap').style.display = 'block';
+      document.getElementById('result').style.display = 'none';
       window.open(waUrl, '_blank');
     }
   </script>
